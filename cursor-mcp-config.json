@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "docker",
+      "args": ["exec", "-i", "sequential-thinking-mcp", "node", "index.js"]
+    },
+    "playwright": {
+      "url": "http://localhost:8020/mcp"
+    },
+    "brave-search": {
+      "url": "http://localhost:8080"
+    },
+    "excel-mcp": {
+      "url": "http://localhost:8017"
+    },
+    "context7": {
+      "url": "http://localhost:8081"
+    }
+  }
+}

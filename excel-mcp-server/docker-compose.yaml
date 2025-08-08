@@ -1,0 +1,20 @@
+# docker-compose.yml
+services:
+  excel-mcp-server:
+    image: python:3.11-slim
+    container_name: excel-mcp-server
+    environment:
+      EXCEL_FILES_PATH: /excel_files # 컨테이너 내부 경로
+      FASTMCP_PORT: "8017"
+    volumes:
+      - ./excel_files:/excel_files # 호스트 폴더 마운트
+    ports:
+      - "8017:8017" # 외부 접속 포트
+    command: >
+      sh -c "pip install uv && uv run --with excel-mcp-server excel-mcp-server streamable-http"
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge

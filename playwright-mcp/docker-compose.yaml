@@ -1,0 +1,19 @@
+services:
+  playwright-mcp:
+    build: .
+    container_name: playwright-mcp
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "8020:8020" # HTTP 모드 포트
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge

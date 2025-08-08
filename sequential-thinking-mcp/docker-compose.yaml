@@ -1,0 +1,13 @@
+services:
+  sequential-thinking-mcp:
+    image: mcp/sequentialthinking
+    container_name: sequential-thinking-mcp
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge

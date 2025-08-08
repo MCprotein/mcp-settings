@@ -1,0 +1,19 @@
+services:
+  brave-search-mcp:
+    image: mcp/brave-search
+    container_name: brave-search-mcp
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    ports:
+      - "8080:8080" # MCP 서버 포트 (실제 사용 포트)
+    env_file:
+      - ../.env
+    environment:
+      - BRAVE_API_KEY=${BRAVE_API_KEY}
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
