@@ -2,19 +2,23 @@
   "mcpServers": {
     "sequential-thinking": {
       "command": "docker",
-      "args": ["exec", "-i", "sequential-thinking-mcp", "node", "index.js"]
+      "args": ["exec", "-i", "sequential-thinking-mcp", "node", "dist/index.js"]
     },
     "playwright": {
       "url": "http://localhost:8020/mcp"
     },
     "brave-search": {
-      "url": "http://localhost:8080"
+      "url": "http://localhost:8080/mcp"
     },
     "excel-mcp": {
-      "url": "http://localhost:8017"
+      "url": "http://localhost:8017/mcp"
     },
     "context7": {
-      "url": "http://localhost:8081"
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "pdf-reader": {
+      "command": "docker",
+      "args": ["exec", "-i", "pdf-reader-mcp", "node", "dist/src/index.js"]
     }
   }
 }
