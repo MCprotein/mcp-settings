@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "brave-search": {
+      "type": "http",
+      "url": "http://localhost:8080/mcp"
+    },
+    "excel-mcp": {
+      "type": "http",
+      "url": "http://localhost:8017/mcp"
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "docker",
+      "args": ["exec", "-i", "sequential-thinking-mcp", "node", "dist/index.js"]
+    }
+  }
+}
