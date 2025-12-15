@@ -1,0 +1,13 @@
+services:
+  context7:
+    image: mcp/context7
+    container_name: context7-mcp
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge
